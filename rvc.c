@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <Windows.h>
 #include <process.h>
-#define TEST
+#define TEST // For Test
 
 int Obstacle[3] = { 0,0,0 }; // {왼쪽, 오른쪽, 앞쪽} 0이 장애물 x, 1이 장애물 o
 int Motor[2] = { 0,0 }; // {왼쪽, 오른쪽} 0이 전방, 1이 후방
