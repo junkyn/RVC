@@ -39,7 +39,7 @@ int main(){
 
 
 
-unsigned _stdcall Sensor(void* arg){
+unsigned _stdcall Sensor(){
 	int SensorResult[3]={0,0,0};
 	while(1){
 		SensorResult[0] = LeftSensor();
@@ -51,13 +51,13 @@ unsigned _stdcall Sensor(void* arg){
 		Sleep(10);
 	}
 }
-unsigned _stdcall DustSensor(void* arg){
+unsigned _stdcall DustSensor(){
 	while(1){
 		Dust = isDust();
 		Sleep(10);
 	}
 }
-unsigned _stdcall MotorControl(void* arg){
+unsigned _stdcall MotorControl(){
 	// 두 모터의 속력은 항상 같다.
 	while(1){
 		if(MoveForward) SetMotor(0,0);
@@ -66,7 +66,7 @@ unsigned _stdcall MotorControl(void* arg){
 		Sleep(10);
 	}
 }
-unsigned _stdcall CleanerControl(void* arg){
+unsigned _stdcall CleanerControl(){
 	while(1){
 		if(CleanerCommand == 0) SetCleaner(0);
 		else if(CleanerCommand == 1) SetCleaner(1);
@@ -109,17 +109,34 @@ void CtrlMoveNotBackward(){
 		}
 }
 void SetCleaner(int Level){
-	//Level이 0이면 흡입 중단, 1이면 흡입력 중간으로 흡입, 2이면 흡입력 강하게 흡입
+	switch(Level){
+		case 0: // 흡입 중단
+		break;
+		case 1: // 흡입 중간
+		break;
+		case 2: // 흡입 강하게
+		break;
+	}
 }
 void SetMotor(int L, int R){
 	LeftMotorControl(L);
 	RightMotorControl(R);
 }
 void LeftMotorControl(int dir){
-	//왼쪽 모터를 dir이 0이면 전진, dir이 1이면 후진
+	switch(dir){
+		case 0: //전진
+		break;
+		case 1: //후진
+		break;
+	}
 }
 void RightMotorControl(int dir){
-	//오른쪽 모터를 dir이 0이면 전진, dir이 1이면 후진
+	switch(dir){
+		case 0: //전진
+		break;
+		case 1: //후진
+		break;
+	}
 }
 int LeftSensor(){
 	//RVC의 왼쪽에 달려있는 센서가 장애물을 감지하면 1을 return, 감지하지 못하면 0을 return, 오류 시 -1을 return
