@@ -116,6 +116,7 @@ void SetCleaner(int Level){
 		break;
 		case 2: // 흡입 강하게
 		break;
+		default:break;
 	}
 }
 void SetMotor(int L, int R){
@@ -128,6 +129,7 @@ void LeftMotorControl(int dir){
 		break;
 		case 1: //후진
 		break;
+		default:break;
 	}
 }
 void RightMotorControl(int dir){
@@ -136,6 +138,7 @@ void RightMotorControl(int dir){
 		break;
 		case 1: //후진
 		break;
+		default:break;
 	}
 }
 int LeftSensor(){
